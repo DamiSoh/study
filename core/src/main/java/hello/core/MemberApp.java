@@ -14,6 +14,9 @@ public class MemberApp {
 // Section 03 --
 // getBean("name", Name.class); ==> 메소드명이 빈의 디폴트 이름이 된다.
 // @Bean("new Name") 으로 설정하면 이름 바뀌긴 하는데, 추천하진 않는다.
+// ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+// ApplicationContext : 인터페이스, AnnotationConfigApplicationContext : 인터페이스 구현 클래스이다.
+// AppConfig 는 생성자에 들어가는 필수 파라미터다
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
